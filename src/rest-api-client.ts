@@ -316,7 +316,7 @@ export class RestApiClient<EventType extends string = HttpAndRestApiClientEvent,
     // setting the instance to Map...
     this.setInstance(_restApiClient, options.name);
 
-    return restApiClient;
+    return _restApiClient;
   }
 
   //#endregion
