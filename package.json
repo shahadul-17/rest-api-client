@@ -35,7 +35,6 @@
     "typescript": "^4.4.4"
   },
   "dependencies": {
-    "@shahadul-17/event-manager": "^0.0.4",
     "@shahadul-17/http-client": "^0.0.1",
     "@shahadul-17/uid-generator": "0.0.1"
   }
