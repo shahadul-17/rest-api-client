@@ -157,7 +157,9 @@ export class RestApiClient<EventType extends string = HttpAndRestApiClientEvent,
     try {
       httpRequestOptions = this.prepareRequestOptions(requestOptions.routeName, requestOptions.data);
     } catch (error) {
-      const response = (error as HttpError).toResponse();
+      const httpError = error instanceof HttpError ? error
+        : HttpError.fromError(error as Error, 400);
+      const response = httpError.toResponse(this._options.includeErrorStackTrace);
 
       this.fireEventListeners({
         type: RestApiClientEvent.DataValidationError,
