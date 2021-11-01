@@ -1,0 +1,42 @@
+{
+  "name": "@shahadul-17/rest-api-client",
+  "version": "0.0.1",
+  "description": "A lightweight and robust REST API client.",
+  "author": "Md. Shahadul Alam Patwary",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "tsc --build --clean",
+    "build": "tsc --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shahadul-17/rest-api-client.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "client",
+    "http",
+    "fetch",
+    "XMLHttpRequest",
+    "request",
+    "xhr"
+  ],
+  "bugs": {
+    "url": "https://github.com/shahadul-17/rest-api-client/issues"
+  },
+  "homepage": "https://github.com/shahadul-17/rest-api-client#readme",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "@shahadul-17/event-manager": "^0.0.4",
+    "@shahadul-17/http-client": "^0.0.1",
+    "@shahadul-17/uid-generator": "0.0.1"
+  }
+}
