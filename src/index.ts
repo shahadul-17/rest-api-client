@@ -6,3 +6,4 @@ export * from "./token-provider.i";
 export * from "./rest-api-client-event.e";
 export * from "./rest-api-client-request-options.i";
 export * from "./http-and-rest-api-client-event.t";
+export * from "./rest-api-client-event-arguments.i";
