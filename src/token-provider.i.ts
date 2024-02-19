@@ -1,4 +1,4 @@
-import { IHttpResponse } from '@shahadul-17/http-client/dist';
+import { IHttpResponse } from '@shahadul-17/http-client';
 import { IRestApiClientEventArguments } from './rest-api-client-event-arguments.i';
 import { IRestApiClient } from './rest-api-client.i';
 

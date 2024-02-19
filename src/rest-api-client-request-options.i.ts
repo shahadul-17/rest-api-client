@@ -17,6 +17,13 @@ export interface IRestApiClientRequestOptions
    */
   automaticJsonResponseBodyParsing?: boolean;
   /**
+   * Indicates whether or not cross-site Access-Control requests
+   * should be made using credentials such as cookies,
+   * authorization headers or TLS client certificates. Setting
+   * this value has no effect on same-origin requests.
+   */
+  allowCredentialsOnCrossSiteRequests?: boolean;
+  /**
    * Number of milliseconds a request can take before automatically
    * being terminated. Default value is 0.
    */

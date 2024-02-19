@@ -32,7 +32,10 @@ export class RestApiClient<EventType extends string = HttpAndRestApiClientEvent,
   private async _requestRouteMapAsync(url: string): Promise<IRouteMap> {
     try {
       // requests for resource...
-      const response = await this.sendRequestAsync(url);
+      const response = await this.sendRequestAsync({
+        url: url,
+        allowCredentialsOnCrossSiteRequests: this._options.allowCredentialsOnCrossSiteRequests,
+      });
 
       // if http response status code is not OK (200),
       // we throw error...
@@ -175,6 +178,8 @@ export class RestApiClient<EventType extends string = HttpAndRestApiClientEvent,
     httpRequestOptions.requestTags = requestOptions.requestTags;
     httpRequestOptions.automaticJsonRequestBodyParsing = requestOptions.automaticJsonRequestBodyParsing;
     httpRequestOptions.automaticJsonResponseBodyParsing = requestOptions.automaticJsonResponseBodyParsing;
+    httpRequestOptions.allowCredentialsOnCrossSiteRequests = requestOptions.allowCredentialsOnCrossSiteRequests
+      ?? this._options.allowCredentialsOnCrossSiteRequests;
 
     this.fireEventListeners({
       type: RestApiClientEvent.BeforeRequestSend,
@@ -198,6 +203,15 @@ export class RestApiClient<EventType extends string = HttpAndRestApiClientEvent,
          * code wouldn't be executing...
          */
         httpRequestOptions = this.prepareRequestOptions(this._options.routeName, this._options.data);
+        httpRequestOptions.timeout = requestOptions.timeout;
+        httpRequestOptions.additionalData = requestOptions.additionalData;
+        httpRequestOptions.requestTags = requestOptions.requestTags;
+        httpRequestOptions.automaticJsonRequestBodyParsing = requestOptions.automaticJsonRequestBodyParsing;
+        httpRequestOptions.automaticJsonResponseBodyParsing = requestOptions.automaticJsonResponseBodyParsing;
+        httpRequestOptions.automaticJsonResponseBodyParsing = requestOptions.automaticJsonResponseBodyParsing;
+        httpRequestOptions.allowCredentialsOnCrossSiteRequests = requestOptions.allowCredentialsOnCrossSiteRequests
+          ?? this._options.allowCredentialsOnCrossSiteRequests;
+
         response = await this.sendRequestAsync(httpRequestOptions);
       }
     }
