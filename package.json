@@ -1,6 +1,6 @@
 {
   "name": "@shahadul-17/rest-api-client",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A lightweight and robust REST API client.",
   "author": "Md. Shahadul Alam Patwary",
   "license": "MIT",
@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/shahadul-17/rest-api-client#readme",
   "dependencies": {
-    "@shahadul-17/http-client": "^0.0.6",
+    "@shahadul-17/http-client": "^0.0.7",
     "@shahadul-17/uid-generator": "^0.0.1"
   },
   "devDependencies": {
